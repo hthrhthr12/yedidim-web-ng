@@ -1,4 +1,5 @@
 <form class="problem-list">
+  <h1 class="title">מה הבעיה?</h1>
   <mat-selection-list #problemsListInput>
     <mat-list-option *ngFor="let problem of problems" class="problem">
       {{problem}}
@@ -8,10 +9,13 @@
   <mat-form-field appearance="legacy" #otherProblem class="reason">
     <input matInput (change)="this.setOtherProblem($event)" placeholder="יש לי בעיה אחרת" />
   </mat-form-field>
-  <br>
-  <mat-label>
-    <mat-icon>info</mat-icon>
-    ניתן לבחור יותר מאפשרות אחת
-  </mat-label>
+
+  <div>
+    <mat-label class="information">
+      <mat-icon>info</mat-icon>
+      <span class="text">ניתן לבחור יותר מאפשרות אחת</span>
+    </mat-label>
+  </div>
 </form>
+
 <button mat-raised-button (click)="this.continue()">המשך</button>

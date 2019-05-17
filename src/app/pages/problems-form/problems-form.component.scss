@@ -1,16 +1,39 @@
 :host {
+  .title {
+    text-align: center;
+    margin: 0;
+  }
   .problem-list {
+    text-align: center;
     margin: 15px;
     overflow: hidden;
     mat-list-option.problem {
+      &[aria-selected="true"] {
+        background: #287cab;
+        color: #fff;
+      }
       background: #eee;
       margin: 5px;
       max-width: 100%;
+      font-size: 1.2rem;
+      ::ng-deep .mat-pseudo-checkbox{
+        display: none;
+      }
     }
   }
 
   .reason {
     margin: 5px;
     width: 100%;
+  }
+  .information {
+    display: block;
+    text-align: start;
+    color: #777;
+    .mat-icon, .text {
+      font-size: 1rem;
+      line-height: 1rem;
+      padding: 2px;
+    }
   }
 }

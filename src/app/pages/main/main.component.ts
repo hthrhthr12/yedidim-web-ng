@@ -12,14 +12,16 @@ export class MainComponent implements OnInit {
   constructor(private stateProvider : CallStateService, private router: Router) { }
   callId: string;
 
+  callId: string;
+
   ngOnInit() {
   }
 
   public newCall = () => {
     this.router.navigate(['/problems-form']);
-  };
+  }
 
   public moveToCall = (callId: string) => {
     this.router.navigateByUrl(`/call-tracking/${callId}`);
-  };
+  }
 }

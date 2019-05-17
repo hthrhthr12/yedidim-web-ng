@@ -15,11 +15,11 @@ export class CallTrackingComponent implements OnInit {
   public callState: CallState;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private callStateService: CallStateService,
-    private callDataService: CallDataService) {
+              private callStateService: CallStateService,
+              private callDataService: CallDataService) {
     this.activatedRoute.params.subscribe(params => {
-      this.callId = params['callId'];
-    })
+      this.callId = params.callId;
+    });
   }
 
   ngOnInit() {
@@ -29,14 +29,17 @@ export class CallTrackingComponent implements OnInit {
   reload() {
     this.load();
   }
-  cancel(){
+
+  cancel() {
     this.callDataService.cancel(this.callId);
   }
 
   private load() {
     this.callStateService.get(this.callId).subscribe(
-      callState => { this.callState = callState }
-    )        
+      callState => {
+        this.callState = callState;
+      }
+    );
   }
 
 }

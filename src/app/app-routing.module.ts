@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppeallerDetailsComponent } from './appealler-details/appealler-details.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "appealler-details", component: AppeallerDetailsComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

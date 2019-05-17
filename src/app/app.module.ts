@@ -8,6 +8,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { CallFinishedComponent } from './pages/call-finished/call-finished.component';
 import { ProblemsFormComponent } from './pages/problems-form/problems-form.component';
 import { AppeallerDetailsFormComponent } from './pages/appealler-details-form/appealler-details-form.component';
+import { CallTrackingComponent } from './pages/call-tracking/call-tracking.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AppeallerDetailsFormComponent } from './pages/appealler-details-form/ap
     HeaderComponent,
     ProblemsFormComponent,
     AppeallerDetailsFormComponent,
-    CallFinishedComponent
+    CallFinishedComponent,
+    CallTrackingComponent
   ],
   imports: [
     BrowserModule,

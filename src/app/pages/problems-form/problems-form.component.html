@@ -1,3 +1,17 @@
-<p>
-  problems-form works!
-</p>
+<form>
+  <mat-selection-list #problemsListInput>
+    <mat-list-option *ngFor="let problem of problems">
+      {{problem}}
+    </mat-list-option>
+  </mat-selection-list>
+
+  <mat-form-field #otherProblem>
+    <input matInput (change)="this.setOtherProblem($event)" placeholder="יש לי בעיה אחרת" />
+  </mat-form-field>
+  <br>
+  <mat-label>
+    <mat-icon>info</mat-icon>
+    ניתן לבחור יותר מאפשרות אחת
+  </mat-label>
+</form>
+<button mat-raised-button (click)="this.continue()">המשך</button>

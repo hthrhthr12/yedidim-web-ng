@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CallStateService } from 'src/services/call-state/call-state.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CallState } from 'src/types/callState';
+import { CallDataService } from 'src/services/call-data/call-data.service';
 
 @Component({
   selector: 'app-call-tracking',
@@ -14,7 +15,8 @@ export class CallTrackingComponent implements OnInit {
   public callState: CallState;
 
   constructor(private activatedRoute: ActivatedRoute,
-    private callStateService: CallStateService) {
+    private callStateService: CallStateService,
+    private callDataService: CallDataService) {
     this.activatedRoute.params.subscribe(params => {
       this.callId = params['callId'];
     })
@@ -26,6 +28,9 @@ export class CallTrackingComponent implements OnInit {
 
   reload() {
     this.load();
+  }
+  cancel(){
+    this.callDataService.cancel(this.callId);
   }
 
   private load() {

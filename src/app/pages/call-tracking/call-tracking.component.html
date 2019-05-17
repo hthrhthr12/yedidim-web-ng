@@ -3,6 +3,27 @@
 <button mat-raised-button (click)="reload()">רענן</button>
 <br>
 <div *ngFor="let state of callState">
-  <span>{{state.date.toLocaleTimeString()}}</span><mat-icon>check_circle</mat-icon>{{state.title}}
+  <span>{{state.date.toLocaleTimeString()}}</span>
+  <mat-icon>check_circle</mat-icon>{{state.title}}
   <br>
+</div>
+<br><br><br>
+<div>
+  <a href="tel:053-3131310">
+    <div>
+      <button mat-fab color="primary">
+        <mat-icon>phone</mat-icon>
+      </button>
+      <br>
+      חיוג למוקד
+    </div>
+  </a>
+  <div>
+      <button mat-fab color="primary" (click)="cancel()">
+          <mat-icon>cancel</mat-icon>
+          
+      </button>
+    <br>
+    ביטול אירוע
+  </div>
 </div>

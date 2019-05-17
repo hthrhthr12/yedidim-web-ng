@@ -9,8 +9,9 @@ import { CallFinishedComponent } from './pages/call-finished/call-finished.compo
 import { ProblemsFormComponent } from './pages/problems-form/problems-form.component';
 import { AppeallerDetailsFormComponent } from './pages/appealler-details-form/appealler-details-form.component';
 import { CallTrackingComponent } from './pages/call-tracking/call-tracking.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './pages/main/main.component';
 
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,14 +19,15 @@ import { MainComponent } from './main/main.component';
     ProblemsFormComponent,
     AppeallerDetailsFormComponent,
     CallFinishedComponent,
-    CallTrackingComponent
+    CallTrackingComponent,
     MainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   exports: [
     MaterialModule

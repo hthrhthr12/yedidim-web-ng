@@ -43,9 +43,11 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+import {BidiModule} from '@angular/cdk/bidi';
 
 @NgModule({
   exports: [
+    BidiModule,
     A11yModule,
     CdkStepperModule,
     CdkTableModule,

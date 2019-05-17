@@ -1,0 +1,15 @@
+<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="10">
+  <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+</agm-map>
+<input #search placeholder="search for location" 
+autocorrect="off" autocapitalize="off" 
+spellcheck="off" type="text"
+  />
+
+<button  color="primary" clear small icon-start (click)="setCurrentPosition()">
+  רענן
+</button>
+<button  color="primary" clear small icon-start (click)="save()">
+  בחר
+</button>
+{{locationText}}

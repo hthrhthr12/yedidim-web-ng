@@ -8,9 +8,17 @@ import { MaterialModule } from './modules/material/material.module';
 import { CallFinishedComponent } from './pages/call-finished/call-finished.component';
 import { ProblemsFormComponent } from './pages/problems-form/problems-form.component';
 import { AppeallerDetailsFormComponent } from './pages/appealler-details-form/appealler-details-form.component';
+import { AddressComponent } from './pages/address/address.component';
+import { MapPickerComponent } from './pages/map-picker/map-picker.component';
+import { AgmCoreModule } from '@agm/core';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
+    AppComponent,
+    AddressComponent,
+    MapPickerComponent,
     AppComponent,
     HeaderComponent,
     ProblemsFormComponent,
@@ -21,7 +29,15 @@ import { AppeallerDetailsFormComponent } from './pages/appealler-details-form/ap
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDqxcnf5MCqc8BaR8Uc5_UqafaV9OhF-eY',
+      libraries: ["places"]
+    }),
+    AppRoutingModule,
+    MaterialModule
   ],
   exports: [
     MaterialModule

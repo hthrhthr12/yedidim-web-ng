@@ -1,0 +1,21 @@
+
+
+  <h1>עדכון מיקום</h1>
+<h2>איפה נתקעת?</h2>
+  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="10">
+    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  </agm-map>
+  <label>{{description}}</label>
+  <button color="primary" small (click)="edit()">
+    ערוך
+  </button>
+
+  <br/>
+  <label for="inputDescription">תיאור המקום (רק אם צריך)</label>
+  <input id="inputDescription" type="text"
+  placeholder="לדוגמא, בשטח העפר בסוף הרחוב" [(ngModel)]="locationText"/>
+
+
+  <button type="submit"  color="primary" clear small icon-start (click)="save()">
+    המשך
+  </button>

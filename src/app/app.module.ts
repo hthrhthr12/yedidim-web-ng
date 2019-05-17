@@ -18,7 +18,9 @@ import { MaterialModule } from './modules/material/material.module';
     AppRoutingModule,
     MaterialModule
   ],
-  providers: [],
+  exports: [
+    MaterialModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

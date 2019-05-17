@@ -1,21 +1,24 @@
+<h1>איפה נתקעת?</h1>
+<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="10">
+  <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+</agm-map>
 
-
-  <h1>עדכון מיקום</h1>
-<h2>איפה נתקעת?</h2>
-  <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="10">
-    <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
-  </agm-map>
-  <label>{{description}}</label>
-  <button color="primary" small (click)="edit()">
-    ערוך
+<button mat-raised-button (click)="edit()">
+    <mat-icon>work</mat-icon>
   </button>
 
-  <br/>
-  <label for="inputDescription">תיאור המקום (רק אם צריך)</label>
-  <input id="inputDescription" type="text"
-  placeholder="לדוגמא, בשטח העפר בסוף הרחוב" [(ngModel)]="locationText"/>
 
+<label>{{description}}</label>
 
-  <button type="submit"  color="primary" clear small icon-start (click)="save()">
-    המשך
-  </button>
+<br />
+<label for="inputDescription"></label>
+<br/>
+<mat-form-field>
+  <input matInput id="inputDescription" placeholder="לדוגמא, בשטח העפר בסוף הרחוב" [(ngModel)]="locationText" />
+  <mat-label>תיאור המקום (רק אם צריך)</mat-label>
+</mat-form-field>
+<br/>
+
+<button mat-raised-button color="primary" (click)="save()">
+  המשך
+</button>

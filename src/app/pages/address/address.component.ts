@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ICallData } from 'src/types/callData';
 import { StoreService } from 'src/services/store/store.service';
-import { NumberValueAccessor } from '@angular/forms/src/directives';
 
 @Component({
   selector: 'app-address',
@@ -27,7 +25,7 @@ export class AddressComponent implements OnInit {
       this.longitude = callData.address.coordinate ? callData.address.coordinate.lon : -1;
   
     }
-    if(this.latitude < 0 || this.longitude < 0) {
+    if(!callData || this.latitude < 0 || this.longitude < 0) {
       this.setCurrentPosition();
     }
    
@@ -67,5 +65,7 @@ export class AddressComponent implements OnInit {
     });
     this.router.navigate(['appealler-details-form']);
   }
+
+
 
 }

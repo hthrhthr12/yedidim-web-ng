@@ -1,15 +1,26 @@
+<h1>עדכון מיקום</h1>
+
 <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="10">
   <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
 </agm-map>
-<input #search placeholder="search for location" 
-autocorrect="off" autocapitalize="off" 
-spellcheck="off" type="text"
-  />
 
-<button  color="primary" clear small icon-start (click)="setCurrentPosition()">
+
+  <br />
+  <mat-form-field>
+
+      <input matInput #search placeholder="יש להזין כתובת ולבחור מהרשימה שתופיע" 
+      autocorrect="off" autocapitalize="off" 
+      spellcheck="off" type="text"
+        />
+    <mat-label>הזנת מיקום ידנית</mat-label>
+  </mat-form-field>
+
+<br/>
+
+<button mat-raised-button clear small icon-start (click)="setCurrentPosition()">
   רענן
 </button>
-<button  color="primary" clear small icon-start (click)="save()">
-  בחר
+<br/>
+<button mat-raised-button color="primary" clear small icon-start (click)="save()">
+  עדכון מיקום
 </button>
-{{locationText}}

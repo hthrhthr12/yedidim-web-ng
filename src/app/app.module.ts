@@ -8,7 +8,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { CallFinishedComponent } from './pages/call-finished/call-finished.component';
 import { ProblemsFormComponent } from './pages/problems-form/problems-form.component';
 import { AppeallerDetailsFormComponent } from './pages/appealler-details-form/appealler-details-form.component';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './pages/main/main.component';
 
 @NgModule({
   declarations: [

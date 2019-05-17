@@ -8,7 +8,7 @@ import { MainComponent} from './pages/main/main.component'
 const routes: Routes = [
   { path: "appealler-details-form", component: AppeallerDetailsFormComponent },
   { path: "problems-form", component: ProblemsFormComponent },
-  { path: "call-finished", component: CallFinishedComponent }
+  { path: "call-finished", component: CallFinishedComponent },
   { path: "main", component: MainComponent }
 ];
 

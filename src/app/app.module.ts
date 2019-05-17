@@ -20,7 +20,9 @@ import { MainComponent } from './pages/main/main.component';
     AppRoutingModule,
     MaterialModule
   ],
-  providers: [],
+  exports: [
+    MaterialModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

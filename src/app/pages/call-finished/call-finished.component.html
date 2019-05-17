@@ -1,9 +1,9 @@
-<h1 class="title">פנייתך התקבלה</h1>
-<h4>כונן שלנו יגיע לסייע בהקדם</h4>
-<mat-icon>work</mat-icon>
-<h5>מספר הפניה שלך</h5>
-<mat-label>{{callId}}</mat-label>
-<h5>יש לשמור את מספר הפניה לצורך מעקב</h5>
-<br>
-<br>
-<button mat-flat-button class="large_button" (click)="this.navigateToCall()">למעקב אחרי הפניה</button>
+<form>
+  <h1 class="title">פנייתך התקבלה</h1>
+  <h3 class="title">כונן שלנו יגיע לסייע בהקדם</h3>
+  <mat-icon>work</mat-icon>
+  <h4 class="title">מספר הפניה שלך</h4>
+  <div class="callerID">{{callId}}</div>
+  <h4 class="title">יש לשמור את מספר הפניה לצורך מעקב</h4>
+  <button mat-flat-button class="large_button" (click)="this.navigateToCall()">למעקב אחרי הפניה</button>
+</form>

@@ -1,0 +1,25 @@
+:host {
+  text-align: center;
+  .title {
+    margin: 20px auto;
+  }
+
+  .mat-icon {
+    margin: 15px;
+    font-size: 3rem;
+    line-height: 3rem;
+    height: 50px;
+    width: 100px;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+  .callerID {
+    border: 1px solid black;
+    padding: 15px 0;
+    margin: 15px auto;
+    width: 85%;
+    font-size: 2rem;
+  }
+}

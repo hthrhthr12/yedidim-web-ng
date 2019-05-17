@@ -5,8 +5,8 @@
     </mat-list-option>
   </mat-selection-list>
 
-  <mat-form-field>
-    <input matInput placeholder="יש לי בעיה אחרת" />
+  <mat-form-field #otherProblem>
+    <input matInput (change)="this.setOtherProblem($event)" placeholder="יש לי בעיה אחרת" />
   </mat-form-field>
   <br>
   <mat-label>
@@ -14,4 +14,4 @@
     ניתן לבחור יותר מאפשרות אחת
   </mat-label>
 </form>
-<button mat-raised-button>המשך</button>
+<button mat-raised-button (click)="this.continue()">המשך</button>

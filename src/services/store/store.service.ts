@@ -16,6 +16,7 @@ export class StoreService {
       }
       const keys = Object.keys(callDataPart);
       keys.forEach(key => this.currCallData[key] = callDataPart[key]);
+      console.log(this.currCallData);
   };
 
   public reset = () => this.currCallData = null;

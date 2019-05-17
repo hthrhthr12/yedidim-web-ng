@@ -37,13 +37,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     RouterModule,
-    FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDqxcnf5MCqc8BaR8Uc5_UqafaV9OhF-eY',
       libraries: ["places"]
+      apiKey: 'AIzaSyDqxcnf5MCqc8BaR8Uc5_UqafaV9OhF-eY',
     }),
-    AppRoutingModule,
     MaterialModule
+    AppRoutingModule,
   ],
   exports: [
     MaterialModule

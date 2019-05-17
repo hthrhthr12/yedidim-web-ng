@@ -1,5 +1,11 @@
-<mat-toolbar color="primary">
-    <mat-toolbar-row>
-        <span>ידידים</span>
-      </mat-toolbar-row>
+<mat-toolbar [ngClass]="{'is_home' : isHome }">
+  <mat-toolbar-row class="header">
+    <a class="back"><</a>
+    <img *ngIf="!isHome" src="assets/logo/bad-small-logo.png"/>
+    <a>הצטרפו אלינו</a>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row *ngIf="isHome" class="home_logo">
+    <img  src="assets/logo/bad-big-logo.png"/>
+  </mat-toolbar-row>
 </mat-toolbar>

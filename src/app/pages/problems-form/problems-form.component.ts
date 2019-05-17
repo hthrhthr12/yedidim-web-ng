@@ -1,29 +1,30 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatSelectionList, MatInput } from '@angular/material';
-import { ActivatedRoute, Router } from '@angular/router';
-import { StoreService } from 'src/services/store/store.service';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatSelectionList} from '@angular/material';
+import {Router} from '@angular/router';
+import {StoreService} from '../../services/store/store.service';
 
 @Component({
   selector: 'app-problems-form',
   templateUrl: './problems-form.component.html',
-  styleUrls: ['./problems-form.component.less']
+  styleUrls: ['./problems-form.component.scss']
 })
 export class ProblemsFormComponent implements OnInit {
 
-  @ViewChild("problemsListInput") problemsListInput: MatSelectionList;
+  @ViewChild('problemsListInput') problemsListInput: MatSelectionList;
   public otherProblem: string;
 
   constructor(private router: Router,
-              private store: StoreService) { }
+              private store: StoreService) {
+  }
 
   public problems = [
-    "הרכב לא מניע",
-    "יש לי פנצ'ר ",
-    "ננעל הרכב עם המפתחות בפנים",
-    "נתקעתי בלי דלק",
-    "נתקעתי בלי שמן",
-    "התחפרתי בשטח",
-    "נטרקה לי הדלת של הבית"
+    'הרכב לא מניע',
+    'יש לי פנצ\'ר ',
+    'ננעל הרכב עם המפתחות בפנים',
+    'נתקעתי בלי דלק',
+    'נתקעתי בלי שמן',
+    'התחפרתי בשטח',
+    'נטרקה לי הדלת של הבית'
   ];
 
   ngOnInit() {
@@ -44,6 +45,6 @@ export class ProblemsFormComponent implements OnInit {
     }
 
     this.store.setPartial({problems: selectedProblems});
-    this.router.navigateByUrl('/address');
-  }
+    this.router.navigateByUrl('/appealler-details-form');
+  };
 }

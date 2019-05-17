@@ -1,23 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { StoreService } from 'src/services/store/store.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {StoreService} from 'src/app/services/store/store.service';
+import {google} from '@agm/core/services/google-maps-types';
 
 @Component({
   selector: 'app-address',
   templateUrl: './address.component.html',
-  styleUrls: ['./address.component.css']
+  styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
+  locationText: string;
   description: string;
   latitude: number;
   longitude: number;
 
 
-  constructor(public router: Router, private storeService: StoreService) { }
+  constructor(public router: Router, private storeService: StoreService) {
+  }
 
   ngOnInit() {
-    var callData = this.storeService.get();
-    if (callData && callData.address) {
+    const callData = this.storeService.get();
+    if (callData) {
+      this.locationText = callData.address.locationText;
       this.description = callData.address.description;
       this.latitude = callData.address.coordinate ? callData.address.coordinate.lat : -1;
       this.longitude = callData.address.coordinate ? callData.address.coordinate.lon : -1;
@@ -29,23 +33,22 @@ export class AddressComponent implements OnInit {
     }
 
 
-
-
   }
 
   private setCurrentPosition() {
-    if ("geolocation" in navigator) {
+    if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
-        
+
       });
     }
   }
+
   getPlaceByCoordinate() {
-    var geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(this.latitude, this.longitude);
-    geocoder.geocode({ 'location': latlng }, function (results, status) {
+    const geocoder = new google.maps.Geocoder();
+    const latlng = new google.maps.LatLng(this.latitude, this.longitude);
+    geocoder.geocode({location: latlng}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         if (results[0]) {
           this.description = results[0].formatted_address;
@@ -62,7 +65,8 @@ export class AddressComponent implements OnInit {
     this.storeService.setPartial({
       address: {
         description: this.description,
-        coordinate: { lat: this.latitude, lon: this.longitude }
+        locationText: this.locationText,
+        coordinate: {lat: this.latitude, lon: this.longitude}
       }
     });
     this.router.navigate(['mapPicker']);
@@ -73,12 +77,12 @@ export class AddressComponent implements OnInit {
     this.storeService.setPartial({
       address: {
         description: this.description,
-        coordinate: { lat: this.latitude, lon: this.longitude }
+        locationText: this.locationText,
+        coordinate: {lat: this.latitude, lon: this.longitude}
       }
     });
     this.router.navigate(['appealler-details-form']);
   }
-
 
 
 }

@@ -3,21 +3,21 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "yedidim-web-ng": {
+    "yedidim-ng": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "scss"
         }
       },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/yedidim-web-ng",
+            "outputPath": "dist/yedidim-ng",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,7 +27,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -62,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "yedidim-web-ng:build"
+            "browserTarget": "yedidim-ng:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "yedidim-web-ng:build:production"
+              "browserTarget": "yedidim-ng:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "yedidim-web-ng:build"
+            "browserTarget": "yedidim-ng:build"
           }
         },
         "test": {
@@ -84,7 +85,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.less"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -107,7 +109,7 @@
         }
       }
     },
-    "yedidim-web-ng-e2e": {
+    "yedidim-ng-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +118,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "yedidim-web-ng:serve"
+            "devServerTarget": "yedidim-ng:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "yedidim-web-ng:serve:production"
+              "devServerTarget": "yedidim-ng:serve:production"
             }
           }
         },
@@ -136,5 +138,5 @@
       }
     }
   },
-  "defaultProject": "yedidim-web-ng"
+  "defaultProject": "yedidim-ng"
 }

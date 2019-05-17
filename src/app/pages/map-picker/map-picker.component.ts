@@ -1,21 +1,21 @@
-import { Component, OnInit, NgZone, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { } from 'googlemaps';
-import { MapsAPILoader } from '@agm/core';
-import { ICallData } from 'src/types/callData';
-import { StoreService } from 'src/services/store/store.service';
+import {Component, OnInit, NgZone, EventEmitter, Output, ElementRef, ViewChild} from '@angular/core';
+import {Router} from '@angular/router';
+import {MapsAPILoader} from '@agm/core';
+import {StoreService} from '../../services/store/store.service';
+import {google} from '@agm/core/services/google-maps-types';
 
 @Component({
   selector: 'app-map-picker',
   templateUrl: './map-picker.component.html',
-  styleUrls: ['./map-picker.component.css']
+  styleUrls: ['./map-picker.component.scss']
 })
 export class MapPickerComponent implements OnInit {
+  locationText: string;
   description: string;
   latitude: number;
   longitude: number;
 
-  @ViewChild("search")
+  @ViewChild('search')
   public searchElementRef: ElementRef;
 
 
@@ -28,39 +28,40 @@ export class MapPickerComponent implements OnInit {
     private ngZone: NgZone,
     public router: Router,
     private storeService: StoreService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
-    var callData = this.storeService.get();
+    const callData = this.storeService.get();
     if (callData) {
+      this.locationText = callData.address.locationText;
       this.description = callData.address.description;
       this.latitude = callData.address.coordinate ? callData.address.coordinate.lat : 39.8282;
       this.longitude = callData.address.coordinate ? callData.address.coordinate.lon : -98.5795;
 
-    }
-    else {
+    } else {
       this.setCurrentPosition();
       this.getPlaceByCoordinate();
     }
 
 
-
-    //load Places Autocomplete
+    // load Places Autocomplete
     this.mapsAPILoader.load().then(() => {
-      let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
-        types: ["address"]
+      const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement, {
+        types: ['address']
       });
-      autocomplete.addListener("place_changed", () => {
+      autocomplete.addListener('place_changed', () => {
         this.ngZone.run(() => {
-          //get the place result
-          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+          // get the place result
+          // TODO Check if it works.
+          const place: any = {}; // : google.maps.places.PlaceResult = autocomplete.getPlace();
 
-          //verify result
+          // verify result
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
 
-          //set latitude, longitude and zoom
+          // set latitude, longitude and zoom
           this.latitude = place.geometry.location.lat();
           this.longitude = place.geometry.location.lng();
         });
@@ -69,20 +70,20 @@ export class MapPickerComponent implements OnInit {
   }
 
   private setCurrentPosition() {
-    if ("geolocation" in navigator) {
+    if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
-        
+
       });
     }
   }
 
   getPlaceByCoordinate() {
-    var geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(this.latitude, this.longitude);
-    geocoder.geocode({ 'location': latlng }, function (results, status) {
-      if (status == google.maps.GeocoderStatus.OK) {
+    const geocoder = new google.maps.Geocoder();
+    const latlng = new google.maps.LatLng(this.latitude, this.longitude);
+    geocoder.geocode({location: latlng}, function(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
         if (results[0]) {
           this.description = results[0].formatted_address;
         } else {
@@ -99,7 +100,8 @@ export class MapPickerComponent implements OnInit {
     this.storeService.setPartial({
       address: {
         description: this.description,
-        coordinate: { lat: this.latitude, lon: this.longitude }
+        locationText: this.locationText,
+        coordinate: {lat: this.latitude, lon: this.longitude}
       }
     });
     this.router.navigate(['address']);

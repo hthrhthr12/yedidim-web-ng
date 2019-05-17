@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class MainComponent implements OnInit {
 
   constructor(private stateProvider : CallStateService, private router: Router) { }
+  callId: string;
 
   ngOnInit() {
   }
@@ -18,11 +19,7 @@ export class MainComponent implements OnInit {
     this.router.navigate(['/problems-form']);
   };
 
-  public checkExistsCall = (callId : string) => {
-      const callState = this.stateProvider.get(callId).subscribe((data)=> {
-        if (data){
-        this.router.navigate(['/call-tracking'], { queryParams: { call: data } });
-        }
-      });
+  public moveToCall = (callId: string) => {
+    this.router.navigateByUrl(`/call-tracking/${callId}`);
   };
 }

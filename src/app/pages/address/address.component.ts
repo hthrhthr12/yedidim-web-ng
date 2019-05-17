@@ -18,7 +18,7 @@ export class AddressComponent implements OnInit {
 
   ngOnInit() {
     var callData = this.storeService.get();
-    if (callData) {
+    if (callData && callData.address) {
       this.locationText = callData.address.locationText;
       this.description = callData.address.description;
       this.latitude = callData.address.coordinate ? callData.address.coordinate.lat : -1;

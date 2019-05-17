@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CallStateService } from 'src/services/call-state/call-state.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-call-finished',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CallFinishedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private stateProvider : CallStateService, private router: Router) { }
+  callId: string;
 
   ngOnInit() {
   }
 
+  navigateToCall() {
+    this.router.navigateByUrl(`/call-tracking/${this.callId}`);
+  }
 }

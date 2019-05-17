@@ -45,6 +45,6 @@ export class ProblemsFormComponent implements OnInit {
     }
 
     this.store.setPartial({problems: selectedProblems});
-    this.router.navigateByUrl('/appealler-details-form');
+    this.router.navigateByUrl('/address');
   };
 }

@@ -1,3 +1,6 @@
-<p>
-  problems-form works!
-</p>
+<mat-selection-list #problemsListInput>
+  <mat-list-option *ngFor="let problem of problems">
+    {{problem}}
+  </mat-list-option>
+</mat-selection-list>
+

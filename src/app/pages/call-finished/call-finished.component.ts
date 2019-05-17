@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CallStateService } from 'src/services/call-state/call-state.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-call-finished',
@@ -9,8 +9,14 @@ import { Router } from '@angular/router';
 })
 export class CallFinishedComponent implements OnInit {
 
-  constructor(private stateProvider : CallStateService, private router: Router) { }
   callId: string;
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router) {
+    this.activatedRoute.params.subscribe(params => {
+      this.callId = params['callId'];
+    })
+  }
 
   ngOnInit() {
   }

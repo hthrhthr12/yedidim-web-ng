@@ -14,6 +14,6 @@ export class CallDataService {
   }
 
   public create(callData: ICallData): Observable<string> {
-    return of("1231313");
+    return of(Math.floor(Math.random() * 5000).toString());
   }
 }

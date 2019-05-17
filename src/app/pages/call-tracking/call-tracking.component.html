@@ -1,14 +1,8 @@
-<h2>מעקב פנייה 73823</h2>
+<h2>מעקב פנייה {{callId}}</h2>
 <div>עודכן לאחרונה: 11:23</div>
-<button mat-raised-button>רענן</button>
+<button mat-raised-button (click)="reload()">רענן</button>
 <br>
-<div>
-  <span>11:23</span><mat-icon>check_circle</mat-icon>הפניה התקבלה
+<div *ngFor="let state of callState">
+  <span>{{state.date.toLocaleTimeString()}}</span><mat-icon>check_circle</mat-icon>{{state.title}}
+  <br>
 </div>
-<div>
-  <span>11:23</span><mat-icon>check_circle</mat-icon>הפניה התקבלה
-</div>
-<div>
-  <span>11:23</span><mat-icon>check_circle</mat-icon>הפניה התקבלה
-</div>
-<br>

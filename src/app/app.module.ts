@@ -14,9 +14,8 @@ import { AddressComponent } from './pages/address/address.component';
 import { MapPickerComponent } from './pages/map-picker/map-picker.component';
 import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,

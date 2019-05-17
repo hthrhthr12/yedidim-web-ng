@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@agm/core@^1.0.0-beta.5":
+  version "1.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/@agm/core/-/core-1.0.0-beta.5.tgz#6dbceb666b2dbc4a868b97e1340a3faceb5f2113"
+  integrity sha512-LVENJqtBZEWpX+uJkGI0zgg+Xkm2KkktQm4ojZozArbeNvQkVL6pqVc04Mme6vvOzwJpD1cET5w4byC8Xaq1QQ==
+
 "@angular-devkit/architect@0.13.9":
   version "0.13.9"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.13.9.tgz#8bbca4b968fccbf88fc2f86542cbee09e1256e1f"
@@ -100,7 +105,7 @@
     "@angular-devkit/core" "7.3.9"
     rxjs "6.3.3"
 
-"@angular/animations@^7.2.15":
+"@angular/animations@~7.2.0":
   version "7.2.15"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-7.2.15.tgz#980c1f523a79d4b7cb44508f57fba06f2e0872fa"
   integrity sha512-8oBt3HLgd2+kyJHUgsd7OzKCCss67t2sch15XNoIWlOLfxclqU+EfFE6t/vCzpT8/+lpZS6LU9ZrTnb+UBj5jg==
@@ -334,6 +339,11 @@
     rxjs "6.3.3"
     semver "5.6.0"
     semver-intersect "1.4.0"
+
+"@types/googlemaps@^3.30.20":
+  version "3.30.20"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.30.20.tgz#55adff1d0ef96f31148f684a8fdcab8eedb9a842"
+  integrity sha512-cTTLBYt6DNKMi359Tg2QndRUbgxvsOcSlFWBDL3OWI/VP7/od4TD6vrmO8ADYdr5elYF/az0frKXi9bddKeMgA==
 
 "@types/jasmine@*":
   version "3.3.12"

@@ -12,8 +12,6 @@ export class MainComponent implements OnInit {
   constructor(private stateProvider : CallStateService, private router: Router) { }
   callId: string;
 
-  callId: string;
-
   ngOnInit() {
   }
 

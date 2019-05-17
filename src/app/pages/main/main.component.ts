@@ -21,7 +21,7 @@ export class MainComponent implements OnInit {
   public checkExistsCall = (callId : string) => {
       const callState = this.stateProvider.get(callId).subscribe((data)=> {
         if (data){
-        this.router.navigate(['/call-status'], { queryParams: { call: data } });
+        this.router.navigate(['/call-tracking'], { queryParams: { call: data } });
         }
       });
   };

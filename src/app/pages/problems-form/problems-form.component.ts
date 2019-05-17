@@ -13,8 +13,7 @@ export class ProblemsFormComponent implements OnInit {
   @ViewChild("problemsListInput") problemsListInput: MatSelectionList;
   public otherProblem: string;
 
-  constructor(private route: ActivatedRoute,
-              private router: Router,
+  constructor(private router: Router,
               private store: StoreService) { }
 
   public problems = [
@@ -45,6 +44,6 @@ export class ProblemsFormComponent implements OnInit {
     }
 
     this.store.setPartial({problems: selectedProblems});
-    this.router.navigateByUrl('/call-finished');
+    this.router.navigateByUrl('/appealler-details-form');
   }
 }

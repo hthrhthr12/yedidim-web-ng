@@ -1,17 +1,17 @@
-<form>
+<form [formGroup]="profileForm">
   <mat-form-field>
-    <input matInput placeholder="לדוגמא, טויוטה קורולה" />
+    <input matInput formControlName="carType" placeholder="לדוגמא, טויוטה קורולה" />
     <mat-label>מה סוג הרכב?</mat-label>
   </mat-form-field>
   <br />
   <mat-form-field>
-    <input matInput placeholder="לדוגמא, אברהם אברהמי" />
+    <input matInput formControlName="name" placeholder="לדוגמא, אברהם אברהמי" />
     <mat-label>איך קוראים לך?</mat-label>
   </mat-form-field>
   <br />
   <mat-form-field>
-    <input matInput placeholder="מספר טלפון" />
+    <input matInput formControlName="phone" placeholder="מספר טלפון" />
     <mat-label>איך אפשר להשיג אותך?</mat-label>
   </mat-form-field>
 </form>
-<button mat-raised-button>המשך</button>
+<button (click)="continue()" mat-raised-button>המשך</button>

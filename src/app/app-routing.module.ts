@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'mapPicker', component: MapPickerComponent},
   { path: "appealler-details-form", component: AppeallerDetailsFormComponent },
   { path: "problems-form", component: ProblemsFormComponent },
-  { path: "call-finished", component: CallFinishedComponent },
+  { path: "call-finished/:callId", component: CallFinishedComponent },
   { path: "call-tracking", component: CallTrackingComponent },
   { path: "main", component: MainComponent },
 ];

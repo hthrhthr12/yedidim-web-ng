@@ -16,6 +16,7 @@ import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     MainComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     MaterialModule,

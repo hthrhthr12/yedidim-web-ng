@@ -16,7 +16,7 @@ import { MainComponent } from './main/main.component';
     HeaderComponent,
     ProblemsFormComponent,
     AppeallerDetailsFormComponent,
-    CallFinishedComponent
+    CallFinishedComponent,
     MainComponent
   ],
   imports: [

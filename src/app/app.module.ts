@@ -8,12 +8,15 @@ import { MaterialModule } from './modules/material/material.module';
 import { CallFinishedComponent } from './pages/call-finished/call-finished.component';
 import { ProblemsFormComponent } from './pages/problems-form/problems-form.component';
 import { AppeallerDetailsFormComponent } from './pages/appealler-details-form/appealler-details-form.component';
+import { CallTrackingComponent } from './pages/call-tracking/call-tracking.component';
+import { MainComponent } from './pages/main/main.component';
 import { AddressComponent } from './pages/address/address.component';
 import { MapPickerComponent } from './pages/map-picker/map-picker.component';
 import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,12 +26,16 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ProblemsFormComponent,
     AppeallerDetailsFormComponent,
-    CallFinishedComponent
+    CallFinishedComponent,
+    CallTrackingComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    BrowserAnimationsModule,
+    FormsModule
     BrowserAnimationsModule,
     RouterModule,
     FormsModule,

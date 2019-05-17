@@ -1,0 +1,32 @@
+:host {
+  width: 100%;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  .is_home {
+
+    .header {
+      height: 35px;
+    }
+
+    .back {
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .home_logo {
+      height: 110px;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 15px;
+    }
+  }
+}

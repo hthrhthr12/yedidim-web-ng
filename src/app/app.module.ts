@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppeallerDetailsComponent } from './appealler-details/appealler-details.component';
+import { AppeallerDetailsComponent } from './pages/appealler-details/appealler-details.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MaterialModule } from './modules/material/material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppeallerDetailsComponent
+    AppeallerDetailsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

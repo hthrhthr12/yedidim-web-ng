@@ -38,10 +38,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     RouterModule,
     AgmCoreModule.forRoot({
-      libraries: ["places"]
+      libraries: ["places"],
       apiKey: 'AIzaSyDqxcnf5MCqc8BaR8Uc5_UqafaV9OhF-eY',
     }),
-    MaterialModule
+    MaterialModule,
     AppRoutingModule,
   ],
   exports: [

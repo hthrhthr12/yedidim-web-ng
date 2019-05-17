@@ -1,3 +1,65 @@
-.info{
+:host {
+    .info {
     text-align: center;
+    padding: 15px 30px;
+
+    h1 {
+      padding-top: 40px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 20px;
+      padding: 0 30px;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+
+      li {
+        padding: 0 7px;
+
+        img {
+          width: 50px;
+        }
+      }
+    }
+
+    .call_for_help {
+      color: white;
+      background-color: #63d961;
+      width: 90%;
+      font-size: 25px;
+      height: 75px;
+    }
+  }
+
+  h3{
+    padding: 0 50px;
+  }
+
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px 0 30px;
+
+    mat-form-field {
+      height: 50px;
+      flex: 2;
+    }
+
+    button {
+      color: white;
+      background-color: #63d961;
+      flex: 1;
+      font-size: 25px;
+      height: 50px;
+      margin: 0 29px;
+    }
+  }
 }

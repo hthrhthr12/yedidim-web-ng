@@ -1,14 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 
 html, body {
   height: 100%;
-  direction: rtl;
+  font-family: "Alef Hebrew",
+  “Helvetica Neue”,
+  Helvetica,
+  Roboto,
+  Arial,
+  sans-serif;
 }
 
 body {
+  direction: rtl;
   background: #f5f5f5;
   margin: 0 auto;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
   display: flex;
   max-width: 560px;
   align-content: center;
@@ -28,4 +34,3 @@ body {
     text-align: start !important;
   }
 }
-

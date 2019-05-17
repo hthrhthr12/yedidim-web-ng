@@ -1,4 +1,5 @@
 <form [formGroup]="profileForm">
+  <h1 class="title">רק עוד כמה פרטים...</h1>
   <mat-form-field>
     <input matInput formControlName="carType" placeholder="לדוגמא, טויוטה קורולה" />
     <mat-label>מה סוג הרכב?</mat-label>
@@ -14,4 +15,4 @@
     <mat-label>איך אפשר להשיג אותך?</mat-label>
   </mat-form-field>
 </form>
-<button (click)="continue()" mat-raised-button>המשך</button>
+<button mat-flat-button class="large_button" (click)="this.continue()">המשך</button>

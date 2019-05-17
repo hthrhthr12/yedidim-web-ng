@@ -21,7 +21,7 @@ export class ProblemsFormComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.problemsListInput.selectedOptions.selected;
+    //this.problemsListInput.selectedOptions.selected;
   }
 
 }

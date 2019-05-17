@@ -23,7 +23,7 @@ export class StoreService {
       if (!this.currCallData) {
           this.currCallData = {} as any;
       }
-
+      console.log(this.currCallData)
   };
 
   public reset = () => this.currCallData = null;

@@ -8,7 +8,6 @@ import { StoreService } from 'src/services/store/store.service';
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
-  locationText: string;
   description: string;
   latitude: number;
   longitude: number;
@@ -19,7 +18,6 @@ export class AddressComponent implements OnInit {
   ngOnInit() {
     var callData = this.storeService.get();
     if (callData && callData.address) {
-      this.locationText = callData.address.locationText;
       this.description = callData.address.description;
       this.latitude = callData.address.coordinate ? callData.address.coordinate.lat : -1;
       this.longitude = callData.address.coordinate ? callData.address.coordinate.lon : -1;
@@ -64,7 +62,6 @@ export class AddressComponent implements OnInit {
     this.storeService.setPartial({
       address: {
         description: this.description,
-        locationText: this.locationText,
         coordinate: { lat: this.latitude, lon: this.longitude }
       }
     });
@@ -76,7 +73,6 @@ export class AddressComponent implements OnInit {
     this.storeService.setPartial({
       address: {
         description: this.description,
-        locationText: this.locationText,
         coordinate: { lat: this.latitude, lon: this.longitude }
       }
     });

@@ -3,7 +3,6 @@ import { ICoordinate } from "./coordinate";
 type ProblemsList = Array<string>;
 
 interface IAddress {
-    locationText: string;
     coordinate?: ICoordinate;
     description?: string;
 }

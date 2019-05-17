@@ -42,6 +42,7 @@ export class MapPickerComponent implements OnInit {
     }
     else {
       this.setCurrentPosition();
+      this.getPlaceByCoordinate();
     }
 
 
@@ -74,14 +75,14 @@ export class MapPickerComponent implements OnInit {
       navigator.geolocation.getCurrentPosition((position) => {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
-        this.getPlaceByCoordinate();
+        
       });
     }
   }
 
   getPlaceByCoordinate() {
-    var geocoder = new google.maps.Geocoder;
-    var latlng = { lat: this.latitude, lng: this.longitude };
+    var geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(this.latitude, this.longitude);
     geocoder.geocode({ 'location': latlng }, function (results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         if (results[0]) {

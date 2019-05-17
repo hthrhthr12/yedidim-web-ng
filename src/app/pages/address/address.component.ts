@@ -18,18 +18,19 @@ export class AddressComponent implements OnInit {
 
   ngOnInit() {
     var callData = this.storeService.get();
-    if(callData) {
+    if (callData) {
       this.locationText = callData.address.locationText;
       this.description = callData.address.description;
       this.latitude = callData.address.coordinate ? callData.address.coordinate.lat : -1;
       this.longitude = callData.address.coordinate ? callData.address.coordinate.lon : -1;
-  
+
     }
-    if(!callData || this.latitude < 0 || this.longitude < 0) {
+    if (!callData || this.latitude < 0 || this.longitude < 0) {
       this.setCurrentPosition();
+      this.getPlaceByCoordinate();
     }
-   
-  
+
+
 
 
   }
@@ -39,8 +40,24 @@ export class AddressComponent implements OnInit {
       navigator.geolocation.getCurrentPosition((position) => {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
+        
       });
     }
+  }
+  getPlaceByCoordinate() {
+    var geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(this.latitude, this.longitude);
+    geocoder.geocode({ 'location': latlng }, function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        if (results[0]) {
+          this.description = results[0].formatted_address;
+        } else {
+
+        }
+      } else {
+
+      }
+    });
   }
 
   edit() {

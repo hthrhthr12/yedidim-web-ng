@@ -43,11 +43,9 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
-import {BidiModule} from '@angular/cdk/bidi';
 
 @NgModule({
   exports: [
-    BidiModule,
     A11yModule,
     CdkStepperModule,
     CdkTableModule,
@@ -92,9 +90,10 @@ import {BidiModule} from '@angular/cdk/bidi';
     ScrollingModule,
   ]
 })
-export class MaterialModule {}
+export class MaterialModule {
+}
 
 
 /**  Copyright 2019 Google Inc. All Rights Reserved.
-    Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license */
+ Use of this source code is governed by an MIT-style license that
+ can be found in the LICENSE file at http://angular.io/license */

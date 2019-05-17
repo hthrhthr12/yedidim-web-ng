@@ -11,6 +11,7 @@ export class StoreService {
   public get = () => this.currCallData;
 
   public setPartial = (callDataPart: Partial<ICallData>) => {
+
     if (!callDataPart) {
       return;
     }
@@ -19,6 +20,10 @@ export class StoreService {
     }
     const keys = Object.keys(callDataPart);
     keys.forEach(key => this.currCallData[key] = callDataPart[key]);
+      if (!this.currCallData) {
+          this.currCallData = {} as any;
+      }
+
   };
 
   public reset = () => this.currCallData = null;

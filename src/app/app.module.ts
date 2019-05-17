@@ -16,7 +16,6 @@ import { AgmCoreModule } from '@agm/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,8 +34,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FormsModule
-    BrowserAnimationsModule,
+    FormsModule,
     RouterModule,
     FormsModule,
     AgmCoreModule.forRoot({

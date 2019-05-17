@@ -9,7 +9,6 @@ import {google} from '@agm/core/services/google-maps-types';
   styleUrls: ['./address.component.scss']
 })
 export class AddressComponent implements OnInit {
-  locationText: string;
   description: string;
   latitude: number;
   longitude: number;
@@ -21,7 +20,6 @@ export class AddressComponent implements OnInit {
   ngOnInit() {
     const callData = this.storeService.get();
     if (callData) {
-      this.locationText = callData.address.locationText;
       this.description = callData.address.description;
       this.latitude = callData.address.coordinate ? callData.address.coordinate.lat : -1;
       this.longitude = callData.address.coordinate ? callData.address.coordinate.lon : -1;
@@ -65,7 +63,6 @@ export class AddressComponent implements OnInit {
     this.storeService.setPartial({
       address: {
         description: this.description,
-        locationText: this.locationText,
         coordinate: {lat: this.latitude, lon: this.longitude}
       }
     });
@@ -77,7 +74,6 @@ export class AddressComponent implements OnInit {
     this.storeService.setPartial({
       address: {
         description: this.description,
-        locationText: this.locationText,
         coordinate: {lat: this.latitude, lon: this.longitude}
       }
     });

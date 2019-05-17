@@ -10,7 +10,6 @@ import {google} from '@agm/core/services/google-maps-types';
   styleUrls: ['./map-picker.component.scss']
 })
 export class MapPickerComponent implements OnInit {
-  locationText: string;
   description: string;
   latitude: number;
   longitude: number;
@@ -34,7 +33,6 @@ export class MapPickerComponent implements OnInit {
   ngOnInit() {
     const callData = this.storeService.get();
     if (callData) {
-      this.locationText = callData.address.locationText;
       this.description = callData.address.description;
       this.latitude = callData.address.coordinate ? callData.address.coordinate.lat : 39.8282;
       this.longitude = callData.address.coordinate ? callData.address.coordinate.lon : -98.5795;
@@ -100,7 +98,6 @@ export class MapPickerComponent implements OnInit {
     this.storeService.setPartial({
       address: {
         description: this.description,
-        locationText: this.locationText,
         coordinate: {lat: this.latitude, lon: this.longitude}
       }
     });

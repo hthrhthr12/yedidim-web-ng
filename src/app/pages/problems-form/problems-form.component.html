@@ -1,11 +1,11 @@
-<form>
+<form class="problem-list">
   <mat-selection-list #problemsListInput>
-    <mat-list-option *ngFor="let problem of problems">
+    <mat-list-option *ngFor="let problem of problems" class="problem">
       {{problem}}
     </mat-list-option>
   </mat-selection-list>
 
-  <mat-form-field #otherProblem>
+  <mat-form-field appearance="legacy" #otherProblem class="reason">
     <input matInput (change)="this.setOtherProblem($event)" placeholder="יש לי בעיה אחרת" />
   </mat-form-field>
   <br>

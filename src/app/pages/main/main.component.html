@@ -1,20 +1,26 @@
 <div class="info">
-<p>
-צריכים סיוע?
-</p>
+  <h1>צריכים סיוע?</h1>
 
-<p>אחד מ 10,000 המתדנבים שלנו ישמחו לעזור, ללא עלות הזמינו סיוע ומוקדן יחזור אליכם טלפונית בדקות הקרובות</p>
+  <ul>
+    <li><img src="assets/Icons/notifications/icon-home-locked.png" alt="דלת נעולה"></li>
+    <li><img src="assets/Icons/notifications/icon-jumpstart.png" alt="הנעת רכב"></li>
+    <li><img src="assets/Icons/notifications/icon-no-fluid.png" alt="חוסר בנוזלים"></li>
+    <li><img src="assets/Icons/notifications/icon-locked-car.png" alt="רכב נעול"></li>
+    <li><img src="assets/Icons/notifications/icon-offroad.png" alt="ירידה מהכביש"></li>
+    <li><img src="assets/Icons/notifications/icon-flat-tire.png" alt="פאנצ'ר"></li>
+  </ul>
 
-<button mat-raised-button color="primary" (click)="newCall()">הזמנת סיוע</button>
+  <p>אחד מ 10,000 המתדנבים שלנו ישמחו לעזור, ללא עלות הזמינו סיוע ומוקדן יחזור אליכם טלפונית בדקות הקרובות</p>
+
+  <button mat-flat-button class="call_for_help" (click)="newCall()">הזמנת סיוע</button>
 </div>
 
 
-<p>בדיקת סטטוס פנייה קיימת</p>
+<h3>בדיקת סטטוס פנייה קיימת</h3>
+<div class="search">
 
-<mat-form-field>
-  <input [(ngModel)]="callId"  matInput placeholder="מספר פניה">
-</mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="callId" matInput placeholder="מספר פניה">
+  </mat-form-field>
 
 <button mat-raised-button color="primary" (click)="moveToCall(callId)">בדיקה</button>
-
-

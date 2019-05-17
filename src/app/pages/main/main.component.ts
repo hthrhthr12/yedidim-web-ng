@@ -12,4 +12,12 @@ export class MainComponent implements OnInit {
   ngOnInit() {
   }
 
+  public newCall = () => {
+    alert("new Call")
+;
+  }
+
+  public checkExistsCall = (callId : string) => {
+    alert(callId);
+  }
 }

@@ -1,0 +1,24 @@
+<h1>איפה נתקעת?</h1>
+<agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="10">
+  <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+</agm-map>
+
+<button mat-raised-button (click)="edit()">
+    <mat-icon>work</mat-icon>
+  </button>
+
+
+<label>{{description}}</label>
+
+<br />
+<label for="inputDescription"></label>
+<br/>
+<mat-form-field>
+  <input matInput id="inputDescription" placeholder="לדוגמא, בשטח העפר בסוף הרחוב" [(ngModel)]="locationText" />
+  <mat-label>תיאור המקום (רק אם צריך)</mat-label>
+</mat-form-field>
+<br/>
+
+<button mat-raised-button color="primary" (click)="save()">
+  המשך
+</button>

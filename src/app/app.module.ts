@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AppeallerDetailsComponent } from './pages/appealler-details/appealler-details.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './modules/material/material.module';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     AppeallerDetailsComponent,
     HeaderComponent
+    AppComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

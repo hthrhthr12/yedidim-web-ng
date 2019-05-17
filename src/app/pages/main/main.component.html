@@ -1,16 +1,20 @@
+<div class="info">
 <p>
 צריכים סיוע?
 </p>
 
-
 <p>אחד מ 10,000 המתדנבים שלנו ישמחו לעזור, ללא עלות הזמינו סיוע ומוקדן יחזור אליכם טלפונית בדקות הקרובות</p>
 
-<button mat-button (onClick)="newCall()">הזמנת סיוע</button>
+<button mat-button color="primary" (click)="newCall()">הזמנת סיוע</button>
+</div>
 
-<label>בדיקת סטטוס פנייה קיימת</label>
+
+<p>בדיקת סטטוס פנייה קיימת</p>
+
 <mat-form-field>
-  <input matInput placeholder="מספר פניה" value="value">
+  <input [(ngModel)]="callId"  matInput placeholder="מספר פניה">
 </mat-form-field>
-<button mat-fab (onClick)="CheckExistsCall()">בדיקה</button>
+
+<button mat-button color="primary" (click)="checkExistsCall(callId)">בדיקה</button>
 
 

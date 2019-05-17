@@ -9,7 +9,7 @@ import { CallFinishedComponent } from './pages/call-finished/call-finished.compo
 import { ProblemsFormComponent } from './pages/problems-form/problems-form.component';
 import { AppeallerDetailsFormComponent } from './pages/appealler-details-form/appealler-details-form.component';
 import { MainComponent } from './pages/main/main.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,8 @@ import { MainComponent } from './pages/main/main.component';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   exports: [
     MaterialModule

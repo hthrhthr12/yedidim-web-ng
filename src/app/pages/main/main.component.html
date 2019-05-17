@@ -5,7 +5,7 @@
 
 <p>אחד מ 10,000 המתדנבים שלנו ישמחו לעזור, ללא עלות הזמינו סיוע ומוקדן יחזור אליכם טלפונית בדקות הקרובות</p>
 
-<button mat-button color="primary" (click)="newCall()">הזמנת סיוע</button>
+<button mat-raised-button color="primary" (click)="newCall()">הזמנת סיוע</button>
 </div>
 
 
@@ -15,6 +15,6 @@
   <input [(ngModel)]="callId"  matInput placeholder="מספר פניה">
 </mat-form-field>
 
-<button mat-button color="primary" (click)="checkExistsCall(callId)">בדיקה</button>
+<button mat-raised-button color="primary" (click)="checkExistsCall(callId)">בדיקה</button>
 
 

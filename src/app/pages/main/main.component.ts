@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CallStateService } from 'src/services/call-state/call-state.service';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {CallStateService} from '../../services/call-state/call-state.service';
 
 @Component({
   selector: 'app-main',
@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private stateProvider : CallStateService, private router: Router) { }
+  constructor(private stateProvider: CallStateService, private router: Router) {
+  }
+
   callId: string;
 
   ngOnInit() {
@@ -17,9 +19,9 @@ export class MainComponent implements OnInit {
 
   public newCall = () => {
     this.router.navigate(['/problems-form']);
-  };
+  }
 
   public moveToCall = (callId: string) => {
     this.router.navigateByUrl(`/call-tracking/${callId}`);
-  };
+  }
 }
